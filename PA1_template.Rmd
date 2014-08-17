@@ -4,14 +4,21 @@ author: "pasascmorg"
 date: "Sunday, August 17, 2014"
 output: html_document
 ---
+# Reproducible Research: Peer Assessment 1
 
 ## Loading and preprocessing the data
 
-We'll use data.table instead of data.frame, and ggplot2 for graphics.  Allow printing of larger numerics in fixed format.  Read in the data and convert the character date column to the date class.   
+We'll use data.table instead of data.frame, and ggplot2 for graphics.  Set knitr options, allow printing of larger numerics in fixed format.  Read in the data and convert the character date column to the date class.   
 
 ```{r echo = TRUE}
 library(data.table)
 library(ggplot2)
+library(knitr)
+
+opts_knit$set(progress=FALSE)
+opts_chunk$set(echo=TRUE, message=FALSE, tidy=TRUE, comment=NA,
+               fig.path="figure/", fig.keep="high", fig.width=10, fig.height=6,
+               fig.align="center")
 
 options(scipen=10)
 
